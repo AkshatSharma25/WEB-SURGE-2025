@@ -194,7 +194,7 @@ export default function Profile() {
             className="flex-shrink-0"
           >
             <Avatar className="h-32 w-32 border-4 border-white shadow-lg">
-              <AvatarImage src="/placeholder.svg?height=128&width=128" alt="@codingmaster" />
+              <AvatarImage src="/placeholder.svg?height=128&width=128" />
               <AvatarFallback className="text-4xl">CM</AvatarFallback>
             </Avatar>
           </motion.div>
@@ -233,15 +233,15 @@ export default function Profile() {
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="flex flex-wrap gap-2"
               >
-                <Button className="gap-2">
+                <Button>
                   <Users className="h-4 w-4" />
                   <span>Follow</span>
                 </Button>
-                <Button variant="outline" className="gap-2">
+                <Button>
                   <MessageSquare className="h-4 w-4" />
                   <span>Message</span>
                 </Button>
-                <Button variant="outline" className="gap-2">
+                <Button className="gap-2">
                   <Mail className="h-4 w-4" />
                   <span>Email</span>
                 </Button>
@@ -298,8 +298,8 @@ export default function Profile() {
         </div>
 
         {/* Main Content */}
-        <Tabs defaultValue="overview" className="w-full">
-          <TabsList className="mb-6">
+        <Tabs defaultValue="overview">
+          <TabsList>
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="contests">Contests</TabsTrigger>
             <TabsTrigger value="submissions">Submissions</TabsTrigger>
