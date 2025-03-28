@@ -3,16 +3,15 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import ParticleBackground from '../components/ParticleBackground';
 import CardList from '../components/CardList';
+import GlitchText from '../components/GlitchText';
 export default function HomePage() {
     const { scrollYProgress } = useScroll();
 
-    // Calculate opacity for the header based on scroll position
+    // Calculate opacity for the header based on scsdjflsftion
     const headerOpacity = useTransform(scrollYProgress, [0, 0.8, 0.85], [1, 1, 0]);
 
     return (
         <div className="relative  min-h-screen bg-black">
-            {/* <NoiseGlitchBackground /> */}
-            {/* Fixed header section */}
             <motion.div
                 className="fixed top-0 left-0 w-full"
                 style={{ opacity: headerOpacity }}
@@ -32,7 +31,10 @@ export default function HomePage() {
                             transition: { duration: 1, repeat: Infinity, ease: "easeInOut" }
                         }}
                     >
-                        <span className="glitch-text-content">CodeForces</span>
+                       <div className='flex items-center justify-center gap-2'>
+                       <img src="/codeforces.png" width={50} alt="" />
+                       <GlitchText text="Codeforces" />
+                       </div>
                     </motion.h1>
                 </div>
             </motion.div>

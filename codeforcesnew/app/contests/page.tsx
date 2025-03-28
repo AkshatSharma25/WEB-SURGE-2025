@@ -83,7 +83,7 @@ export default function ContestsPage() {
           transition={{ delay: 0.4 }}
           className="space-y-6"
         >
-          <h2 className="text-2xl font-semibold flex items-center gap-2">
+          <h2 className="text-2xl font-semibold flex items-center gap-2 text-gray-300">
             <Code2 className="text-[hsl(142,72%,29%)]" />
             Upcoming Contests
           </h2>
@@ -100,7 +100,7 @@ export default function ContestsPage() {
           transition={{ delay: 0.6 }}
           className="space-y-6"
         >
-          <h2 className="text-2xl font-semibold flex items-center gap-2">
+          <h2 className="text-2xl font-semibold flex items-center gap-2 text-gray-300">
             <Code2 className="text-[hsl(142,72%,29%)]" />
             Past Contests
           </h2>
