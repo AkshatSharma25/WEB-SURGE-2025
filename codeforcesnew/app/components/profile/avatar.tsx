@@ -66,7 +66,7 @@ export function Avatar({
 
 export function AvatarImage({
     src,
-    alt = "Avatar",
+    // alt = "Avatar",
     fallback
 }: {
     src: string,
@@ -92,7 +92,7 @@ export function AvatarImage({
         <>
             <img
                 src={src}
-                alt={alt}
+                // alt={alt}
                 onLoad={handleImageLoad}
                 onError={handleImageError}
                 className="w-full h-full object-cover absolute top-0 left-0"

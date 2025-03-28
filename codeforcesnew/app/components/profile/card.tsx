@@ -10,12 +10,15 @@ export function Card({ children, className }: {
         bg-white 
         border 
         border-gray-200 
-        rounded-xl 
+        rounded-2xl 
         overflow-hidden 
-        transition-all 
+        transition-all
         duration-300 
-        hover:shadow-lg 
+        hover:shadow-xl 
+        hover:scale-[1.02]
         hover:border-gray-300
+        shadow-md
+        transform
         ${className || ''}
       `}
     >

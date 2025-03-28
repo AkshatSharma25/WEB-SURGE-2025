@@ -16,12 +16,12 @@ import {
   Trophy,
   Users,
 } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/card"
-import { Avatar, AvatarFallback, AvatarImage } from "../components/avatar"
-import { Badge } from "../components/badge"
-import { Button } from "../components/button"
-import { Progress } from "../components/progress"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/profile/tabs"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/profile/card"
+import { Avatar, AvatarFallback, AvatarImage } from "../components/profile/avatar"
+import { Badge } from "../components/profile/badge"
+import { Button } from "../components/profile/button"
+import { Progress } from "../components/profile/progress"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
 
 // Sample data for the rating chart
@@ -193,13 +193,13 @@ export default function Profile() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="flex-shrink-0"
           >
-            <Avatar className="h-32 w-32 border-4 border-white shadow-lg">
+            <Avatar>
               <AvatarImage src="/placeholder.svg?height=128&width=128" />
-              <AvatarFallback className="text-4xl">CM</AvatarFallback>
+              <AvatarFallback>CM</AvatarFallback>
             </Avatar>
           </motion.div>
 
-          <div className="flex-grow">
+          <div className="flex-grow w-full">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -208,8 +208,8 @@ export default function Profile() {
               >
                 <h1 className="text-3xl font-bold">codingmaster</h1>
                 <div className="flex items-center gap-2 mt-1">
-                  <Badge className={`${getRatingColor(1800)} bg-opacity-10`}>{getRank(1800)}</Badge>
-                  <span className={`font-bold ${getRatingColor(1800)}`}>1800</span>
+                  <Badge>{getRank(2700)}</Badge>
+                  <span className={`font-bold ${getRatingColor(2700)}`}>2700</span>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-2 text-sm text-gray-600">
                   <div className="flex items-center gap-1">
@@ -241,7 +241,7 @@ export default function Profile() {
                   <MessageSquare className="h-4 w-4" />
                   <span>Message</span>
                 </Button>
-                <Button className="gap-2">
+                <Button>
                   <Mail className="h-4 w-4" />
                   <span>Email</span>
                 </Button>
@@ -252,42 +252,42 @@ export default function Profile() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 mt-6 w-full max-w-full px-4"
             >
-              <Card>
-                <CardContent className="p-4 flex items-center gap-3">
+              <Card className="w-full">
+                <CardContent className="p-4 flex items-center gap-3 w-full">
                   <Trophy className="h-8 w-8 text-amber-500" />
-                  <div>
+                  <div className="flex-grow">
                     <p className="text-sm text-gray-500">Contests</p>
                     <p className="text-xl font-bold">42</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardContent className="p-4 flex items-center gap-3">
+              <Card className="w-full">
+                <CardContent className="p-4 flex items-center gap-3 w-full">
                   <Code className="h-8 w-8 text-blue-500" />
-                  <div>
+                  <div className="flex-grow">
                     <p className="text-sm text-gray-500">Problems Solved</p>
                     <p className="text-xl font-bold">387</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardContent className="p-4 flex items-center gap-3">
+              <Card className="w-full">
+                <CardContent className="p-4 flex items-center gap-3 w-full">
                   <Award className="h-8 w-8 text-purple-500" />
-                  <div>
+                  <div className="flex-grow">
                     <p className="text-sm text-gray-500">Max Rank</p>
                     <p className="text-xl font-bold">1245</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardContent className="p-4 flex items-center gap-3">
+              <Card className="w-full">
+                <CardContent className="p-4 flex items-center gap-3 w-full">
                   <Calendar className="h-8 w-8 text-green-500" />
-                  <div>
+                  <div className="flex-grow">
                     <p className="text-sm text-gray-500">Joined</p>
                     <p className="text-xl font-bold">2 years</p>
                   </div>
@@ -362,35 +362,35 @@ export default function Profile() {
                           <span className="text-sm font-medium">Dynamic Programming</span>
                           <span className="text-sm font-medium">78%</span>
                         </div>
-                        <Progress value={progress} className="h-2" />
+                        <Progress value={progress} />
                       </div>
                       <div>
                         <div className="flex justify-between mb-1">
                           <span className="text-sm font-medium">Graphs</span>
                           <span className="text-sm font-medium">65%</span>
                         </div>
-                        <Progress value={65} className="h-2" />
+                        <Progress value={65} />
                       </div>
                       <div>
                         <div className="flex justify-between mb-1">
                           <span className="text-sm font-medium">Data Structures</span>
                           <span className="text-sm font-medium">82%</span>
                         </div>
-                        <Progress value={82} className="h-2" />
+                        <Progress value={82} />
                       </div>
                       <div>
                         <div className="flex justify-between mb-1">
                           <span className="text-sm font-medium">Math</span>
                           <span className="text-sm font-medium">70%</span>
                         </div>
-                        <Progress value={70} className="h-2" />
+                        <Progress value={70} />
                       </div>
                       <div>
                         <div className="flex justify-between mb-1">
                           <span className="text-sm font-medium">Greedy</span>
                           <span className="text-sm font-medium">90%</span>
                         </div>
-                        <Progress value={90} className="h-2" />
+                        <Progress value={90} />
                       </div>
                     </CardContent>
                   </Card>
